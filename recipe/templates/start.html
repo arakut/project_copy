@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<title>Easy cook</title>
+
+<body style="font-family: 'Montserrat', sans-serif; background-color: #FFFAF0">
+
+<nav class="navbar" style="background-color: #4682B4; position:sticky; top:0;z-index:100;">
+    <div class="container-fluid">
+        <center>
+            <h1>Приветствую тебя {{name}}!</h1>
+            <h3>Давай начнём готовить!</h3>
+        </center>
+    </div>
+</nav>
+
+<center>
+    <div class="container-fluid">
+        <table>
+            <tr>
+                <th>
+                    <a href="/action1" class="btn btn-dark">Начнём!</a>
+                </th>
+            </tr>
+        </table>
+    </div>
+</center>
+
+</body>
+
+{% endblock %}

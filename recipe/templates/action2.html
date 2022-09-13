@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<title>Easy cook</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Easy cook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif; background-color: #87CEEB">
+
+<nav class="navbar" style="background-color: #4682B4; position:sticky; top:0;z-index:100;">
+    <div class="container-fluid">
+        <center>
+            <h1>Выбор сделан {{name}}!</h1>
+            <h3>Выберите основной продукт</h3>
+        </center>
+    </div>
+
+</nav>
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+
+        {% for i in food %}
+
+            <div class="col">
+                <div class="card" style="width: 15rem; margin-bottom:15px; background-color: #DCDCDC">
+                    <img src="{{i.image.url}}" class="card-img-top" alt="{{i.title}}">
+                    <div class="card-body">
+                        <h3 class="card-title">{{i.title}}</h3>
+                        <a href="{% url 'recipe' i.id %}" class="btn btn-dark">Получить рецепт</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+{{form}}
+
+</body>
+
+{% endblock %}

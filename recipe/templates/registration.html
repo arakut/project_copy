@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<title>Easy cook</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Easy cook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif; background-color: #87CEEB">
+
+<nav class="navbar" style="background-color: #4682B4; position:sticky; top:0;z-index:100;">
+    <div class="container-fluid">
+        <center>
+            <h1>Давайте пройдем регистрацию</h1>
+        </center>
+    </div>
+
+</nav>
+
+    <center>
+        <form action="/reg" method="post" id="login-form">
+
+        {% csrf_token %}
+        <table>
+            <tr><th>Регистрация</th></tr>
+            <tr>
+                <td><label>Login:</label></td>
+                <td><input type="text" name="username" autofocus autocapitalize="none"
+                           autocomplete="username" maxlength="150" required id="id_username"></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="password" name="password" autocomplete="current-password" required id="id_password"></td>
+            </tr>
+            <tr>
+                <td><label>Name</label></td>
+                <td><input type="text" name="first_name"  maxlength="128"></td>
+            </tr>
+            <tr>
+                <td><label>Surname</label></td>
+                <td><input type="text" name="last_name"  maxlength="128"></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email" name="email"></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a class="navbar-brand; btn btn-dark" href="/"> Главная </a>
+                </td>
+                <td><input type="submit" onclick = "window.location.href ='login/';"
+                           class="btn btn-dark" value="Зарегистрироваться"></td>
+            </tr>
+        </table>
+        </form>
+    </center>
+
+</body>
+
+
+{% endblock %}

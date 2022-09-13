@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<title>Easy cook</title>
+
+<body style="font-family: 'Montserrat', sans-serif; background-color: #FFFAF0">
+
+<nav class="navbar" style="background-color: #4682B4; position:sticky; top:0; z-index:100;">
+    <div class="container-fluid">
+
+        <table>
+            <tr>
+                <td>
+                    <a href="/admin" class="form-control me-2; btn btn-danger">Администрирование</a>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <h2>Добро пожаловать в Web-приложение Easy Cook</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>Прежде чем мы начнем, пройдите регистрацию или войдите в свою учетную запись. Спасибо!</h4>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <button onclick = "window.location.href ='login/';" class="btn btn-success">Войти</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</nav>
+
+<center>
+    <table>
+            <tr>
+                <td>
+                    <button onclick = "window.location.href ='reg';" class="btn btn-success">Регистрация</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/action1" class="btn btn-dark">Начнём!</a>
+                </td>
+            </tr>
+    </table>
+</center>
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Information about author
+        </button>
+        </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show"
+                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Ogorodnik Konstantin: </strong><br>e-mail: <code> paxmagelanic1@gmail.com</code>
+                </div>
+            </div>
+    </div>
+</div>
+
+</body>
+
+{% endblock %}
